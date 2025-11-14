@@ -38,7 +38,10 @@ A Libadwaita rust based application for managing and installing kernels.
 %autosetup -p1 -n %{name}-%{version}
 
 %build
-DESTDIR=%{buildroot} make install
+make build
+
+%install
+DESTDIR=%{buildroot} make install_no_build
 
 %files
 %{_prefix}/lib/%{name}/*
